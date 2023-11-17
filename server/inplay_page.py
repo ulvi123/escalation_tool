@@ -1,5 +1,5 @@
 import streamlit as st
-from alert import create_alert,get_request_status,initialize_opsgenie
+from alert import create_alert, get_request_status, initialize_opsgenie
 
 # Initialize Opsgenie with your API key
 api_key = "db07dbc2-8353-4477-a21d-22c261aea506"

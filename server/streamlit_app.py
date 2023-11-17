@@ -14,6 +14,11 @@ product = st.sidebar.selectbox(
 
 if product == 'InPlay':
     show_inplay_page()
-else:
-    # Your code for the other pages goes here
+elif product == "Other Sportsbook Products":
+    pass
+elif product == "Sports Products":
+    pass
+elif product == "Live Video Streaming":
+    pass
+elif product == "Media: Gametracker/Smartstream":
     pass

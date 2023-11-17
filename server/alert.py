@@ -26,7 +26,7 @@ def create_alert(alert_api):
         print(create_response)
         return create_response
     except opsgenie_sdk.ApiException as error:
-        print("Exception when calling Alert API->create_alert %s\n" % error)
+        print(f'Exception when calling Alert API->create_alert %s\n' % error)
 
 
 def get_request_status(alert_api, request_id):
@@ -35,4 +35,4 @@ def get_request_status(alert_api, request_id):
         print(response)
         return response
     except opsgenie_sdk.ApiException as error:
-        print("Exception when calling AlertApi->get_request_status: %s\\n" % error)
+        print(f'Exception when calling AlertApi->get_request_status: %s\\n' % error)
