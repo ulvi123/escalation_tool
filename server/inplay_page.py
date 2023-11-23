@@ -66,7 +66,7 @@ def show_page():
                             create_alert(alert_api,responder_yes)
 
                     if no_clicked:
-                        st.write("You clicked No.")
+                        st.write("Escalate to Commercial level")
                         responder_no = [
                             {"name": "nikita.babanski@geniussports.com", "type": "user"},
                             {"name": "ulvi.nasibli@geniussports.com", "type": "user"},
