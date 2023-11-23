@@ -53,26 +53,28 @@ def show_page():
                     st.write(" Keep monitoring SO duration if it is ongoing.")
                 if st.checkbox("15-30 minutes"):
                     st.write("Have Tier 1 Customers been affected?")
-                    yes_clicked = st.checkbox("Yes")
-                    no_clicked = st.checkbox("No")
+                    choice = st.radio("", ("Yes", "No"))
 
-                    if yes_clicked:
+                    if choice == "Yes":
                         st.write("Escalate to Exec and Commercial level:")
                         responder_yes = [
                             {"name": "ulvi.nasibli@geniussports.com", "type": "user"},
                             {"name": "yordan.dichev@geniussports.com", "type": "user"},
                         ]
                         if st.button("Notify"):
-                            create_alert(alert_api,responder_yes)
+                            create_alert(alert_api, "Your message here", responder_yes)
 
-                    if no_clicked:
+                    if choice == "No":
                         st.write("Escalate to Commercial level")
                         responder_no = [
-                            {"name": "nikita.babanski@geniussports.com", "type": "user"},
+                            {
+                                "name": "nikita.babanski@geniussports.com",
+                                "type": "user",
+                            },
                             {"name": "ulvi.nasibli@geniussports.com", "type": "user"},
                         ]
                         if st.button("Notify"):
-                            create_alert(alert_api,responder_no)
+                            create_alert(alert_api, "Your message here", responder_no)
 
                 if st.checkbox("Over 30 minutes"):
                     st.write("Your nested information for Over 30 minutes goes here.")
