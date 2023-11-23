@@ -12,17 +12,19 @@ def initialize_opsgenie(api_key):
     return alert_api
 
 
-def create_alert(alert_api):
+responders = [
+    {"name": "robert.soerd@geniussports.com", "type": "user"},
+    {"name": "ulvi.nasibli@geniussports.com", "type": "user"},
+    {"name": "yordan.dichev@geniussports.com", "type": "user"},
+]
+
+
+def create_alert(alert_api, responders):
     timestamp = datetime.datetime.now()
-
-    responders = [
-        {"name": "robert.soerd@geniussports.com", "type": "user"},
-        {"name": "ulvi.nasibli@geniussports.com", "type": "user"},
-        {"name": "yordan.dichev@geniussports.com", "type": "user"},
-    ]
-
-    message = "This is an escalation of test incident, not an actual one " + str(timestamp)
-    alias = 'Alias created at ' + str(timestamp)
+    message = "This is an escalation of test incident, not an actual one " + str(
+        timestamp
+    )
+    alias = "Alias created at " + str(timestamp)
 
     body = opsgenie_sdk.CreateAlertPayload(
         message=message,
