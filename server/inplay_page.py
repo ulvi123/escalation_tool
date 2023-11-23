@@ -6,7 +6,6 @@ api_key = "db07dbc2-8353-4477-a21d-22c261aea506"
 alert_api = initialize_opsgenie(api_key)
 
 
-
 def show_page():
     if "outage_selection" not in st.session_state:
         st.session_state["outage_selection"] = None
@@ -53,37 +52,18 @@ def show_page():
                 ):
                     st.write(" Keep monitoring SO duration if it is ongoing.")
                 if st.checkbox("15-30 minutes"):
-                    # Add your sample data here
                     st.write("Have Tier 1 Customers been affected?")
                     yes_clicked = st.checkbox("Yes")
                     no_clicked = st.checkbox("No")
 
                     if yes_clicked:
                         st.write("Escalate to Exec and Commercial level:")
-                        yes_inputs = []
-                        for i in range(14):
-                            yes_inputs.append(
-                                st.text_input(
-                                    f"Enter information for {i+1}",
-                                    key=f"yes{i+1}",
-                                )
-                            )
                         if st.button("Notify"):
-                            st.write(f"You entered: {yes_inputs}")
                             create_alert(alert_api)
 
                     if no_clicked:
                         st.write("You clicked No.")
-                        # Create 14 input forms for 'No'
-                        no_inputs = []
-                        for i in range(14):
-                            no_inputs.append(
-                                st.text_input(
-                                    f"Enter information for 'No' {i+1}", key=f"no{i+1}"
-                                )
-                            )
                         if st.button("Notify"):
-                            st.write(f"You entered: {no_inputs}")
                             create_alert(alert_api)
 
                 if st.checkbox("Over 30 minutes"):
