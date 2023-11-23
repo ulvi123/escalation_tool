@@ -12,11 +12,7 @@ def initialize_opsgenie(api_key):
     return alert_api
 
 
-responders = [
-    {"name": "robert.soerd@geniussports.com", "type": "user"},
-    {"name": "ulvi.nasibli@geniussports.com", "type": "user"},
-    {"name": "yordan.dichev@geniussports.com", "type": "user"},
-]
+
 
 
 def create_alert(alert_api, responders):

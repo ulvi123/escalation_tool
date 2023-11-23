@@ -58,13 +58,23 @@ def show_page():
 
                     if yes_clicked:
                         st.write("Escalate to Exec and Commercial level:")
+                        responder_yes = [
+                            {"name": "robert.soerd@geniussports.com", "type": "user"},
+                            {"name": "ulvi.nasibli@geniussports.com", "type": "user"},
+                            {"name": "yordan.dichev@geniussports.com", "type": "user"},
+                        ]
                         if st.button("Notify"):
-                            create_alert(alert_api)
+                            create_alert(alert_api,responder_yes)
 
                     if no_clicked:
                         st.write("You clicked No.")
+                        responder_no = [
+                            {"name": "nikita.babanski@geniussports.com", "type": "user"},
+                            {"name": "ulvi.nasibli@geniussports.com", "type": "user"},
+                            {"name": "yordan.dichev@geniussports.com", "type": "user"},
+                        ]
                         if st.button("Notify"):
-                            create_alert(alert_api)
+                            create_alert(alert_api,responder_no)
 
                 if st.checkbox("Over 30 minutes"):
                     st.write("Your nested information for Over 30 minutes goes here.")
