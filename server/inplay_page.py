@@ -62,7 +62,7 @@ def show_page():
                             {"name": "yordan.dichev@geniussports.com", "type": "user"},
                         ]
                         if st.button("Notify"):
-                            create_alert(alert_api, "Your message here", responder_yes)
+                            create_alert(alert_api, responder_yes)
 
                     if choice == "No":
                         st.write("Escalate to Commercial level")
@@ -74,7 +74,7 @@ def show_page():
                             {"name": "ulvi.nasibli@geniussports.com", "type": "user"},
                         ]
                         if st.button("Notify"):
-                            create_alert(alert_api, "Your message here", responder_no)
+                            create_alert(alert_api, responder_no)
 
                 if st.checkbox("Over 30 minutes"):
                     st.write("Your nested information for Over 30 minutes goes here.")
