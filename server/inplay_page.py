@@ -71,7 +71,7 @@ def show_page():
                                 "type": "user",
                             },
                         ]
-                        if st.button("Notify"):
+                        if st.button("Escalate"):
                             create_alert(alert_api, responder_no)
 
                 if st.checkbox("Over 30 minutes"):
