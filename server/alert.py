@@ -22,10 +22,11 @@ def create_alert(alert_api):
     ]
 
     message = "This is an escalation of test incident, not an actual one " + str(timestamp)
+    alias = 'Alias created at ' + str(timestamp)
 
     body = opsgenie_sdk.CreateAlertPayload(
         message=message,
-        alias="python_sample",
+        alias=alias,
         description="Sample of SDK v2",
         responders=responders,
         visible_to=[{"name": "Streamlit", "type": "team"}],
