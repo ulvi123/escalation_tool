@@ -59,7 +59,6 @@ def show_page():
                     if yes_clicked:
                         st.write("Escalate to Exec and Commercial level:")
                         responder_yes = [
-                            {"name": "robert.soerd@geniussports.com", "type": "user"},
                             {"name": "ulvi.nasibli@geniussports.com", "type": "user"},
                             {"name": "yordan.dichev@geniussports.com", "type": "user"},
                         ]
@@ -71,7 +70,7 @@ def show_page():
                         responder_no = [
                             {"name": "nikita.babanski@geniussports.com", "type": "user"},
                             {"name": "ulvi.nasibli@geniussports.com", "type": "user"},
-                            {"name": "yordan.dichev@geniussports.com", "type": "user"},
+                            {"name": "robert.soerd@geniussports.com", "type": "user"},
                         ]
                         if st.button("Notify"):
                             create_alert(alert_api,responder_no)
